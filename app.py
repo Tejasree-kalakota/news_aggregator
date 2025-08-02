@@ -20,7 +20,7 @@ def fetch_articles():
     articles_data = []
     try:
         top_headlines = newsapi.get_top_headlines(language='en', page_size=10)
-        for item in top_headlines['articles']:
+        for item in top_headlines['articles'][:5]:
             url = item.get('url')
 
             # Try parsing the article using Newspaper3k
